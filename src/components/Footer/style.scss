@@ -1,0 +1,95 @@
+@import "../../assets//scss/variables";
+@import "../../assets/scss/mixins";
+
+footer {
+    background: $bg-footer;
+    color: $text-black;
+    width: 100%;
+    padding: 60px;
+
+    ul li {
+        @include flexBox();
+        justify-content: flex-start;
+
+        span {
+            color: $text-footer;
+            flex: 30px 0 0;
+            text-align: left;
+        }
+    }
+
+    form {
+        .input-group {
+            .form-control {
+                border: 2px solid $text-footer;
+            }
+
+            .form-control:focus {
+                box-shadow: none;
+            }
+
+            button {
+                background: $text-footer;
+                color: $text-white;
+                border: none;
+            }
+
+            button:hover {
+                background-color: $text-footer;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 360px) and (max-width: 767px) {
+    footer {
+        padding: 20px 0;
+
+        .container-fluid .row {
+            .col-lg-6 {
+                .col-md-4:not(:first-child) {
+                    @include maPaBoBt();
+                    ul {
+                        margin-bottom: 0;
+                        
+                        li {
+                            justify-content: center;
+                        }
+                    }
+                }
+            } 
+
+            .col-lg-6:first-child {
+               .logo-box {
+                    @include borderBottomFooter();
+                    padding-bottom: 1rem;
+                }   
+            }
+
+            .col-lg-6:last-child {
+                .col-md-6:first-child {
+                    @include maPaBoBt();
+                }
+                .col-md-6 {
+                    div {
+                        margin-top: 1rem;
+                        padding-left: 0 !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    .container-fluid .row {
+        .col-lg-6:last-child {
+            .col-md-6 {
+                div {
+                    margin-top: 0;
+                    padding-left: 0 !important;
+                }
+            }
+        }
+    }
+}

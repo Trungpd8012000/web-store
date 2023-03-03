@@ -1,0 +1,20 @@
+@mixin flexBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin borderBottomFooter {
+    border-bottom: 1px solid #ddd;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+@mixin maPaBoBt {
+    margin-top: 1rem;
+    padding-bottom: 1rem;
+    @include borderBottomFooter();
+}
