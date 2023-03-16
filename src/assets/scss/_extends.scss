@@ -1,0 +1,68 @@
+@import "./variables";
+@import "./mixins";
+
+//
+%flexBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+%borderBottomFromMobileMiniToDesktopLarge {
+    @include responsive($mobile-mini, $desktop-large) {
+        @include borderBottom;
+    }
+}
+
+%borderSolid {
+    border: 1px solid #000;
+}
+
+%maPaBoBt {
+    margin-top: 1rem;
+    padding-bottom: 1rem;
+    @include borderBottom;
+}
+
+%fullWH {
+    width: 100%;
+    height: 100%;
+}
+
+%showFlex {
+    display: flex !important;
+}
+
+%bgBorderNone {
+    border: none;
+    background-color: transparent;
+}
+
+%posElementsHeaderFromMobileToDesktopLarge {
+    @include responsive($mobile-mini, $desktop-large) {
+        @include posElementsHeader;
+    }
+}
+
+%borderTopHeaderFromMobileToDesktopLarge {
+    @include responsive($mobile-mini, $desktop-large) {
+        @include borderTop;
+    }
+}
+
+%borderBottom {
+    border-bottom: 1px solid $color-border-1;
+}
+
+%searchResult {
+    @extend %borderBottom;
+    overflow: hidden;
+    padding: 4px 0;
+}
+
+%posTop50Right0 {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}

@@ -1,9 +1,9 @@
-@import "../../assets//scss/variables";
-@import "../../assets/scss/mixins";
+@import "@assetsScss/variables";
+@import "@assetsScss/mixins";
 
 footer {
     background: $bg-footer;
-    color: $text-black;
+    color: $color-black;
     width: 100%;
     padding: 60px;
 
@@ -12,7 +12,7 @@ footer {
         justify-content: flex-start;
 
         span {
-            color: $text-footer;
+            color: $color-footer;
             flex: 30px 0 0;
             text-align: left;
         }
@@ -21,7 +21,7 @@ footer {
     form {
         .input-group {
             .form-control {
-                border: 2px solid $text-footer;
+                border: 2px solid $color-footer;
             }
 
             .form-control:focus {
@@ -29,13 +29,13 @@ footer {
             }
 
             button {
-                background: $text-footer;
-                color: $text-white;
+                background: $color-footer;
+                color: $color-white;
                 border: none;
             }
 
             button:hover {
-                background-color: $text-footer;
+                background-color: $color-footer;
             }
         }
     }
@@ -49,6 +49,7 @@ footer {
             .col-lg-6 {
                 .col-md-4:not(:first-child) {
                     @include maPaBoBt();
+                    
                     ul {
                         margin-bottom: 0;
                         
@@ -61,7 +62,7 @@ footer {
 
             .col-lg-6:first-child {
                .logo-box {
-                    @include borderBottomFooter();
+                    @include borderBottom();
                     padding-bottom: 1rem;
                 }   
             }
