@@ -1,0 +1,55 @@
+@import "@assetsScss/variables";
+@import "@assetsScss/mixins";
+@import "@assetsScss/extends";
+
+.search-form {
+    margin-right: 26px;
+
+    input {
+        @extend %bgBorderNone;
+        border-bottom: 1px solid $color-search;
+    }
+
+    input:focus {
+        outline: none;
+    }
+
+    button {
+        @extend %bgBorderNone;
+    }
+
+    @include responsive($mobile-mini, $tablet) {
+        @include borderTop;
+    }
+
+    @include responsive($tablet, $desktop-large) {
+        margin-right: 0;
+    }
+}
+
+@include responsive($mobile-mini, $tablet) {
+    .search-form.hide {
+        @include hide;
+    }
+
+    .search-form.show {
+        @include show;
+        @include posElementsHeader;
+        padding: 0 12px;
+        background-color: $bg-footer;
+        height: 60px;
+
+        .input-group {
+            height: 100%;
+            align-items: center;
+            
+            input {
+                flex-grow: 1;
+                @include borderSolid;
+                border-radius: 20px !important;
+                padding: 6px 8px;
+                background-color: $color-white;
+            }
+        }
+    }
+}

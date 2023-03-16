@@ -1,0 +1,87 @@
+@import "@assetsScss/variables";
+@import "@assetsScss/mixins";
+@import "@assetsScss/extends";
+
+header {
+    background-color: $bg-footer;
+    padding: 1rem 0;
+    width: 100%;
+    height: 87px;
+    @extend %flexBox;
+
+    .nav {
+        .btn-toggle-header {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+
+            img {
+                @extend %fullWH;
+            }
+
+            @include responsive($desktop-large, $desktop-extra-extra) {
+                @include hide;
+            }
+        }
+
+        .header-left {
+            .nav-item {
+                padding: 14px;
+                @extend %borderBottomFromMobileMiniToDesktopLarge;
+            }
+
+            .nav-item:first-child {
+                @extend %borderTopHeaderFromMobileToDesktopLarge;
+            }
+
+            @include responsive($mobile-mini, $desktop-large) {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            @extend %posElementsHeaderFromMobileToDesktopLarge;
+        }
+
+        @include responsive($mobile-mini, $desktop-large) {
+            .header-left.hide {
+                @include hide;
+            } 
+
+            .header-left.show {
+                @include show;
+                background-color: $bg-footer;
+            }
+        }
+    }
+
+    .header-right {
+        .top-icons {
+            div {
+                padding: 0 14px;
+                @include responsive($mobile-mini, $desktop-large) {
+                    padding: 0;
+                }
+            }
+
+            div:not(:first-child) {
+                @include responsive($mobile-mini, $desktop-large) {
+                    margin-left: 28px
+                }
+            }
+
+            .search-user {
+                @include responsive($mobile-mini, $tablet) {
+                    @include show;
+                }
+
+                @include responsive($tablet, $desktop-extra-extra) {
+                    @include hide;
+                }
+            }
+
+            @include responsive($mobile-mini, $desktop-large) {
+                justify-content: space-between;
+            }
+        }
+    }
+}

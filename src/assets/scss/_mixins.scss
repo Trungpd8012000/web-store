@@ -1,20 +1,41 @@
+@import "./variables";
+
+// mixin breakpoints
+@mixin responsive ($min-w, $max-w) { @media (min-width: #{$min-w}) and (max-width: #{$max-w}) {
+        @content;  
+    }
+}
+
+//
+@mixin hide {
+    display: none !important;
+}
+
+@mixin show {
+    display: block !important;
+}
+
+@mixin posElementsHeader {
+    position: absolute !important;
+    top: 87px;
+    left: 0;
+    width: 100%;
+}
+
+@mixin borderBottom {
+    border-bottom: 1px solid $color-border-1;
+}
+
+@mixin borderSolid {
+    border: 1px solid #000 !important;
+}
+
 @mixin flexBox {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-@mixin borderBottomFooter {
-    border-bottom: 1px solid #ddd;
-    border-radius: 4px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    -ms-border-radius: 4px;
-    -o-border-radius: 4px;
-}
-
-@mixin maPaBoBt {
-    margin-top: 1rem;
-    padding-bottom: 1rem;
-    @include borderBottomFooter();
+@mixin borderTop {
+    border-top: 1px solid $color-border-1;
 }

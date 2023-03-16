@@ -1,0 +1,33 @@
+@import "@assetsScss/variables";
+@import "@assetsScss/mixins";
+@import "@assetsScss/extends";
+
+.search-result {
+    position: absolute;
+    top: 1.6em;
+    left: 0;
+
+    width: 100%;
+    padding: 8px 4px;
+
+    background-color: $color-white;
+
+    border-radius: 10px !important;
+    border: 1px solid $color-border-1;
+    box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.2);
+
+    li {
+        @extend %searchResult;
+    }
+
+    .keyword {
+        @extend %searchResult;
+        border-bottom: none;
+    }
+
+    @include responsive($mobile-mini, $tablet) {
+        top: 3.1em;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
